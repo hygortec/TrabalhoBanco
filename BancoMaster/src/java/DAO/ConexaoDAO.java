@@ -19,7 +19,7 @@ public class ConexaoDAO {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection conm = DriverManager.getConnection("jdbc:mysql://"+servidor,usuario,senha);
-            String sql = "";
+            String sql = "use bancomaster";
 
             PreparedStatement stmt = conm.prepareStatement(sql);
             stmt.close();
