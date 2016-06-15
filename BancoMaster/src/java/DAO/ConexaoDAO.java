@@ -27,7 +27,6 @@ public class ConexaoDAO {
             
             return DriverManager.getConnection("jdbc:mysql://"+servidor+"/"+banco,usuario,senha);
         }catch(ClassNotFoundException ex){
-            JOptionPane.showMessageDialog(null, "Não foi possivel conectar ao banco de dados");
             throw new SQLDataException(ex.getMessage());
         }
         
