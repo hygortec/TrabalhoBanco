@@ -10,6 +10,11 @@ import javax.swing.JOptionPane;
 public class ConexaoDAO {   
     
     public static Connection getConexao(String servidor, String banco, String usuario, String senha) throws SQLException{
+        //Parametro de conexão banco remoto
+        // Servidor: db4free.net
+        // banco: bancomaster
+        // Usuario Banco: bancomaster  
+        // Senha: shaman
          
         try{
             Class.forName("com.mysql.jdbc.Driver");
