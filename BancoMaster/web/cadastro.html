@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Home</title>
+<title>Cadastro Correntista</title>
 <link rel="stylesheet" href="style.css" />
 <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>  
     <script type="text/javascript" charset="utf-8">
@@ -13,49 +13,77 @@
 </head>
 <body>
 <article>
-<h1>Cadastro</h1>
+    <label>BANCO MASTER - BM</label>>
+<h1>Cadastro de Correntista</h1>
 <form>
 	<ul>
         <li>
-               <label for="name">Your Name:</label>
+            <label for="name">Name:</label>
             <input type="text" size="40" id="name" />
             <br/><br/>
             <label for="endereco">Endereço:</label>
             <input type="text" size="40" id="name" />
+            <br/><br/>
+            <label for="endereco">Telefone:</label>
+            <input type="text" size="40" id="name" />
+            <br/><br/>
+            <label for="endereco">CPF:</label>
+            <input type="text" size="40" id="name" />
+            <br/><br/>
+            <label for="endereco">RG:</label>
+            <input type="text" size="40" id="name" />
+            <br/><br/>
+            <label for="endereco">Renda Mensal:</label>
+            <input type="text" size="40" id="name" />
+            <br/><br/>
         </li>
         <li>
-        	<label for="email">Your Email:</label>
+        	<label for="email">Email:</label>
             <input type="email" size="40" id="email" />
         </li>
         <li>
-            <label for="car">What's my options:</label>
-            <select id="car">
-                <option>Volvo</option>
-                <option>Saab</option>
-                <option>Mercedes</option>
-                <option>Audi</option>
-                <option>Other&hellip;</option>
+            <label for="sexo">Sexo:</label>
+            <select id="sexo">
+                <option>Masculino</option>
+                <option>Feminino</option>
+                <option>Outros</option>
             </select>
         </li>
         <li>
-            <label><input type="radio" name="radio" /> Pick one</label>
-            <label><input type="radio" name="radio" /> And stick with it</label>
+            <label><input type="radio" name="radio" /> Pessoa Física</label>
+            <label><input type="radio" name="radio" /> Pessoa Jurídica</label>
         </li>
         <li>
-			<label><input type="checkbox" /> Can haz tickbox?</label>
+            <label> Escolaridade:</label>
+            <br/>
+			<label><input type="checkbox" /> Ensino Fundamental</label>
+                        <label><input type="checkbox" /> Ensino Medio</label>
+                        <label><input type="checkbox" /> Ensino Superior</label>
+                        <label><input type="checkbox" /> Outros</label>
         </li>
         <li>
-            <label>Upload a file:</label>
+            <p>
+            <label>Informativo: Será anexado abaixo os ducumentos pessoal
+            digitalizado:(RG,CPF,Comprovante de Endereço e de Renda Financeira)</label>
+            </p>
+            <label>Busca arquivo:</label>
             <input type="file" />
+            
+            <br/><br/><br/><br/><br/>
         </li>
+        
+       
         <li>
-        	<label for="message">Message:</label>
+        	<label for="message">Mensagem:</label>
             <textarea cols="50" rows="5" id="message"></textarea>
 		</li>
 	</ul>
     <p>
-        <button type="submit" class="action">Call to action</button>
-        <button type="reset" class="right">Reset</button>
+      
+        <button type="submit" class="">Enviar</button>
+     
+    
+        <button type="reset" class="">Novo Cadastro</button>
     </p>
 </form>
 </article>
