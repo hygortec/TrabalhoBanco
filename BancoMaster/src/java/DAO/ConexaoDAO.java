@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class ConexaoDAO {   
     
-    public static Connection getConexao(String servidor, String banco, String usuario, String senha) throws SQLException{
+    public static Connection getConexao() throws SQLException{
         //Parametro de conexão banco remoto
         // Servidor: db4free.net
         // banco: bancomaster
@@ -18,14 +18,14 @@ public class ConexaoDAO {
          
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conm = DriverManager.getConnection("jdbc:mysql://"+servidor,usuario,senha);
+            Connection conm = DriverManager.getConnection("jdbc:mysql://db4free.net","bancomaster","shaman");
             String sql = "use bancomaster";
 
             PreparedStatement stmt = conm.prepareStatement(sql);
             stmt.close();
             conm.close();
             
-            return DriverManager.getConnection("jdbc:mysql://"+servidor+"/"+banco,usuario,senha);
+            return DriverManager.getConnection("jdbc:mysql://db4free.net","bancomaster","shaman");
         }catch(ClassNotFoundException ex){
             throw new SQLDataException(ex.getMessage());
         }
