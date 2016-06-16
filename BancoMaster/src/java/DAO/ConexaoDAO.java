@@ -25,7 +25,7 @@ public class ConexaoDAO {
             stmt.close();
             conm.close();
             
-            return DriverManager.getConnection("jdbc:mysql://db4free.net","bancomaster","shaman");
+            return DriverManager.getConnection("jdbc:mysql://db4free.net/bancomaster","bancomaster","shaman");
         }catch(ClassNotFoundException ex){
             throw new SQLDataException(ex.getMessage());
         }
