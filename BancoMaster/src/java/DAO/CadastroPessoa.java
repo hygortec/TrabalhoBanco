@@ -32,6 +32,7 @@ public class CadastroPessoa extends HttpServlet {
         objPessoa.setRg(req.getParameter("rg"));
         objPessoa.setTelefone(req.getParameter("telefone"));
         objPessoa.setSexo(Integer.parseInt(req.getParameter("radioSexo")));
+        objPessoa.setRendaMensal(Float.parseFloat(req.getParameter("rendaMensal")));
         objPessoa.setRendaMensal(1500.00f);
         objPessoa.setTipoPessoa(Integer.parseInt(req.getParameter("radioTipoPessoa")));
         
@@ -42,7 +43,6 @@ public class CadastroPessoa extends HttpServlet {
             saida.println("Cadastrado");
         } catch (SQLException ex) {
             saida.println(ex);
-        }
-       
+        }       
     }      
 }
