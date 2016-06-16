@@ -1,0 +1,32 @@
+header {
+ width: 100%;
+ background-color: blue;
+ border: solid;
+}
+
+
+.sidebar {
+ display: inline;
+ width: 25%;
+ float: left;
+ background-color: gray;
+  border: solid;
+}
+
+.article {
+ display: inline;
+ width: 40%;
+ float: left;
+ padding-left: 5%;
+ padding-right: 5%;
+  border: solid;
+}
+
+
+.sidebar2 {
+ display: inline;
+ width: 25%;
+ float: right;
+ background-color: gray;
+ border: solid;
+}
