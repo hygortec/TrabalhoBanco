@@ -21,7 +21,9 @@ public class CadastroPessoa extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       PrintWriter saida = resp.getWriter();
+       
+        
+        PrintWriter saida = resp.getWriter();
         
         Pessoa objPessoa = new Pessoa();
         
@@ -30,9 +32,11 @@ public class CadastroPessoa extends HttpServlet {
         objPessoa.setCpf(req.getParameter("cpf"));
         objPessoa.setRg(req.getParameter("rg"));
         objPessoa.setTelefone(req.getParameter("telefone"));
+        objPessoa.setSexo(Integer.parseInt(req.getParameter("radioSexo")));
         objPessoa.setRendaMensal(1500.00f);
-        objPessoa.setSexo(1);
-        objPessoa.setTipoPessoa(1);
+        objPessoa.setTipoPessoa(Integer.parseInt(req.getParameter("radioTipoPessoa")));
+        
+        
         
         PessoaDAO objContrelePessoa = new PessoaDAO();
         
@@ -42,13 +46,8 @@ public class CadastroPessoa extends HttpServlet {
         } catch (SQLException ex) {
             saida.println(ex);
         }
-        
+       
     }  
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter saida = resp.getWriter();
-        saida.println("GET");
-    }
     
 }
