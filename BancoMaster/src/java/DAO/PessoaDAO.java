@@ -13,7 +13,7 @@ public class PessoaDAO {
     
     public void cadastrar(Pessoa objPessoa) throws SQLException{
         Connection con = ConexaoDAO.getConexao("db4free.net", "bancomaster", "bancomaster", "shaman");
-        String sql = "INSERT INTO pessoa(T001_Nome, T001_Endereco, T001_cpf, T001_rg, T001_Telefone, T001_Sexo, T001_TipoPessoa, T001_RendaMensal) VALUES (?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO T001_Pessoa(T001_Nome, T001_Endereco, T001_cpf, T001_rg, T001_Telefone, T001_Sexo, T001_TipoPessoa, T001_RendaMensal) VALUES (?,?,?,?,?,?,?,?)";
 
         PreparedStatement stmt = con.prepareStatement(sql); //Prepara a string para ser execultado na conexão
 
