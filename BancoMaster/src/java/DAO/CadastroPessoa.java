@@ -20,8 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CadastroPessoa extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {      
         
         PrintWriter saida = resp.getWriter();
         
@@ -36,8 +35,6 @@ public class CadastroPessoa extends HttpServlet {
         objPessoa.setRendaMensal(1500.00f);
         objPessoa.setTipoPessoa(Integer.parseInt(req.getParameter("radioTipoPessoa")));
         
-        
-        
         PessoaDAO objContrelePessoa = new PessoaDAO();
         
         try {
@@ -47,7 +44,5 @@ public class CadastroPessoa extends HttpServlet {
             saida.println(ex);
         }
        
-    }  
-
-    
+    }      
 }
