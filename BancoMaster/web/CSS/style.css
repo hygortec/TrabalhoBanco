@@ -36,16 +36,19 @@ li {padding:26px 1px;border-top:0px dotted #c7c7c7;min-height:27px;}
 /**********************************************************/
 
 label {
-       
+        color: #333;
 	float:left;
-	width:150px;
+	width:300px;
 }
 div#conta {
     width: 1500px;
-    height: 35px;
-    left: 10px;
-    top: 0px;
+    height: 40px;
+    left: 1px;
+    top: 10px;
     background-color: blue;
+    color: cornsilk;
+    font-size: large;
+    float: right;
 }
 div#logo {
     width: 500px;
