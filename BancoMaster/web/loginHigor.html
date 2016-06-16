@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Entra</title>
+        <link rel="stylesheet" href="CSS/style.css" />
+        <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>  
+        <script type="text/javascript" charset="utf-8">
+            $(function () {
+                $("input:checkbox, input:radio, input:file, select").uniform();
+            });
+        </script>
+    </head>
+    <body>
+        <article>
+            <label></label>
+            <h1>Banco Master</h1>
+            <form method="POST" action="">
+                <ul>
+                    <li>
+                        <label for="agencia">Agencia:</label>
+                        <input name="numeroAgencia" type="text" size="40" id="agencia" />
+                        <br/><br/>
+                        <label for="conta">Conta:</label>
+                        <input name="numeroConta" type="text" size="40" id="conta" />
+                        <br/><br/>
+                        <label for="senha">Senha:</label>
+                        <input name="senha" type="password" size="40" id="name" />
+                        <br/><br/>
+                    </li>                    
+                </ul>
+                <p>
+                    <button type="submit" class="">Entrar</button>
+                    <button type="reset" class="">Limpar</button>
+
+                </p>
+            </form>
+        </article>
+        <footer>
+            <p>Todos os direitos reservados</p>
+        </footer>
