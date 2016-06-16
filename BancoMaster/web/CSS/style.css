@@ -18,18 +18,22 @@ label {
 	float:left;
 	width:150px;
 }
-conta{
-    width: 560px;
-    height: 40px;
-    float: left;
-    background-color: greenyellow;
+div#conta {
+    width: 1500px;
+    height: 35px;
+    left: 10px;
+    top: 0px;
+    background-color: blue;
 }
-logo{
-    width: 200px;
-    height: 180px;
-    float: left;
-    background: url(../images/icos/master.jpg)
-    
+div#logo {
+    width: 500px;
+    height: 20px;
+    left: 20px; 
+}
+tr#acesso_um{
+    width: 10px;
+    left: 2px;
+    height: 2px;
 }
 
 input, 
