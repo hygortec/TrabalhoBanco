@@ -78,3 +78,77 @@
             <html/>
     
 
+
+<head>
+    <title>BM - Deposito</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>  
+    <meta charset="UTF-8">
+</head>
+<body>
+    <form>
+        <div class="header">
+            <h1>DEPOSITO</h1>
+        </div>
+        <div class="sidebar">
+
+            <form method="post" action="Principal.html" class="login">
+                <button type="submit" class="login-button">Principal</button>
+            </form>
+            <br/>
+            <form method="post" action="telaEmpFin.html" class="login">
+
+                <button type="submit" class="login-button">Empréstimo/Financiamento</button>
+            </form>
+            <br/>
+            <form method="post" action="telaDeposito.html" class="login">
+
+                <button type="submit" class="login-button">Realizar Deposito</button>
+            </form>
+            <br/>
+            <form method="post" action="telaSaque.html" class="login">
+
+                <button type="submit" class="login-button">Realizar Saque</button>
+            </form>
+            <br/>
+            <form method="post" action="telaExtrato.html" class="login">
+
+                <button type="submit" class="login-button">Verificar Extrato</button>
+            </form>
+            <br/>
+        </div>
+        <div class="article">
+            <form>
+                <label>Agência:</label> 
+                <br/>
+                <input type="text" name="name" size="40">
+                <br/><br/>
+                <label>Conta Corrente:</label> 
+                <br/>
+                <input type="text" name="name" size="40">
+                <br/><br/>
+                <label>Favorecido</label> 
+                <br/>
+                <input type="text" name="name" size="40">
+                <br/><br/>
+                <li>
+                    <label>Qual a forma de deposito?</label>
+                    <br/>
+                    <label><input type="radio" name="radiodinheiro" value="1"/> Dinheiro</label>
+                    <label><input type="radio" name="radioCheque" value="2"/> Cheque</label>
+                    <br/><br/>
+
+                    <label>Valor Deposito</label> 
+                    <br/>
+                    <input type="text" name="name" size="40">
+                    <br/><br/>
+                </li>
+            </form>
+            <tr>
+                <td><button type="submit" class="">DEPOSITAR</button></td>
+            <br/><br/>
+            </tr>
+        </div>
+
+</body>
+</html>
