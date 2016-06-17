@@ -36,13 +36,25 @@ public class CadastroPessoa extends HttpServlet {
         objPessoa.setRendaMensal(1500.00f);
         objPessoa.setTipoPessoa(Integer.parseInt(req.getParameter("radioTipoPessoa")));
         
-        PessoaDAO objContrelePessoa = new PessoaDAO();
+        PessoaDAO objControlePessoa = new PessoaDAO();
+        ContaDAO objControleConta = new ContaDAO();
         
         try {
-            objContrelePessoa.cadastrar(objPessoa);
+            objControlePessoa.cadastrar(objPessoa);
             saida.println("Cadastrado");
         } catch (SQLException ex) {
             saida.println(ex);
-        }       
+        }   
+        try {
+            objPessoa = objControlePessoa.consultar(objPessoa.getCpf());            
+        } catch (SQLException ex) {
+            saida.println(ex);
+        }
+        try {
+            objControleConta.cadastrar(objControleConta.gerarNovaConta(objPessoa));
+        } catch (SQLException ex) {
+            saida.println(ex);
+        }
+                
     }      
 }

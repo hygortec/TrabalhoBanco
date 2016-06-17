@@ -3,6 +3,7 @@ package DAO;
 import BEAN.Pessoa;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -72,8 +73,35 @@ public class PessoaDAO {
         stmt.execute();
         stmt.close();
         con.close();
+    }    
+    
+    /** Método para consultar uma pessoa no banco pelo cpf
+     *   @param cpf String - cpf da pessoa a qual deve ser consultado.
+     *   @return Pessoa 
+     *   @throws Retorno do banco de dados*/
+    public Pessoa consultar(String cpf) throws SQLException{
+        Pessoa objPessoa = new Pessoa();
+        
+        Connection con = ConexaoDAO.getConexao();
+        String sql = "SELECT * FROM T001_Pessoa WHERE T001_cpf like '%" + cpf + "%'";
+
+        PreparedStatement stmt = con.prepareStatement(sql);
+        ResultSet resultado = stmt.executeQuery();
+        resultado.next();
+        //T001_Telefone, T001_Sexo, T001_TipoPessoa, T001_RendaMensal
+        objPessoa.setId(resultado.getInt("T001_id"));
+        objPessoa.setNome(resultado.getString("T001_nome"));
+        objPessoa.setEndereco(resultado.getString("T001_Endereco"));
+        objPessoa.setCpf(resultado.getString("T001_cpf"));
+        objPessoa.setRg(resultado.getString("T001_rg"));
+        objPessoa.setTelefone(resultado.getString("T001_Telefone"));
+        objPessoa.setSexo(resultado.getInt("T001_Sexo"));
+        objPessoa.setTipoPessoa(resultado.getInt("T001_TipoPessoa"));
+        objPessoa.setRendaMensal(resultado.getFloat("T001_RendaMensal"));
+        
+        stmt.close();
+        con.close();
+        
+        return objPessoa;
     }
-    
-    
-    
 }
