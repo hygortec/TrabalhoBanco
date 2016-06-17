@@ -19,7 +19,7 @@ public class LoginConta extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Conta objConta = new Conta();
+        Conta objConta = null;
         PrintWriter saida = resp.getWriter();
 
         int agencia = Integer.parseInt(req.getParameter("numeroAgencia"));
@@ -33,18 +33,21 @@ public class LoginConta extends HttpServlet {
         } catch (SQLException ex) {
             saida.println(ex);
         }
+        if (objConta.getNumero() == numero) {
 
-        if (objConta.getAgencia() == agencia) {
-            if (objConta.getSenha().equals(senha)) {
-                resp.sendRedirect("Principal.html");
+            if (objConta.getAgencia() == agencia) {
+                if (objConta.getSenha().equals(senha)) {
+                    resp.sendRedirect("Principal.html");
+                } else {
+                    saida.println("Senha errada");
+                    saida.println(objConta.getSenha());
+                }
             } else {
-                saida.println("Senha errada");
-                saida.println(objConta.getSenha());
+                saida.println("Agencia não confere");
             }
+
         } else {
-            saida.println("Agencia não confere");
+            saida.println("Conta não encontrada");
         }
-
     }
-
 }
