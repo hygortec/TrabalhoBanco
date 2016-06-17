@@ -12,6 +12,15 @@ public class Conta {
     private int agencia;
     private float limite;
     private float saldo;
+    private String senha;
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     public int getId() {
         return id;
@@ -59,6 +68,5 @@ public class Conta {
 
     public void setSaldo(float saldo) {
         this.saldo = saldo;
-    }
-    
+    }    
 }

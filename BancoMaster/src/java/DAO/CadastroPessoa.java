@@ -35,6 +35,7 @@ public class CadastroPessoa extends HttpServlet {
         objPessoa.setRendaMensal(Float.parseFloat(req.getParameter("rendaMensal")));
         objPessoa.setRendaMensal(1500.00f);
         objPessoa.setTipoPessoa(Integer.parseInt(req.getParameter("radioTipoPessoa")));
+        String senha = req.getParameter("senha");
         
         PessoaDAO objControlePessoa = new PessoaDAO();
         ContaDAO objControleConta = new ContaDAO();
@@ -51,7 +52,8 @@ public class CadastroPessoa extends HttpServlet {
             saida.println(ex);
         }
         try {
-            objControleConta.cadastrar(objControleConta.gerarNovaConta(objPessoa));
+            objControleConta.cadastrar(objControleConta.gerarNovaConta(objPessoa, senha));
+            resp.sendRedirect("Login.html");
         } catch (SQLException ex) {
             saida.println(ex);
         }
