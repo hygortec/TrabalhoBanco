@@ -4,9 +4,17 @@
         <servlet-name>LoginConta</servlet-name>
         <servlet-class>DAO.LoginConta</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Depositar</servlet-name>
+        <servlet-class>DAO.Depositar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginConta</servlet-name>
         <url-pattern>/LoginConta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Depositar</servlet-name>
+        <url-pattern>/Depositar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
