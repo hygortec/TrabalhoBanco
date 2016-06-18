@@ -28,7 +28,7 @@ header {
  width: 260px;
  float: left;
  background-color: #f5f5f5;
-  border: solid;
+
 }
 /*Meio da tela*/
 .article {
@@ -37,7 +37,7 @@ header {
  float: left;
  padding-left: 1px;
  padding-right: 1px;
-  border: solid;
+
 }
 
 
@@ -46,7 +46,7 @@ header {
  width: 25px;
  float: right;
  background-color: gray;
- border: solid;
+
 }
 
 

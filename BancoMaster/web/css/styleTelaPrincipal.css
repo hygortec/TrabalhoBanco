@@ -10,7 +10,7 @@ header {
  width: 25px;
  float: left;
  background-color: gray;
-  border: solid;
+
 }
 
 .article {
@@ -19,7 +19,7 @@ header {
  float: left;
  padding-left: 5px;
  padding-right: 5px;
-  border: solid;
+
 }
 
 
