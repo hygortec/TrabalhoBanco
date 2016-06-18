@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Cadastro Correntista</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>  
+        <script type="text/javascript" charset="utf-8">
+            $(function () {
+                $("input:checkbox, input:radio, input:file, select").uniform();
+            });
+        </script>
+    </head>
+    <body>      
+        
+        <article>            
+            <label></label>
+            <h1>Cadastro de Correntista</h1>
+            <form method="POST" action="CadastroPessoa">
+                <ul>
+                    <li>
+                        <label for="name">Nome:</label>
+                        <input name="nome" type="text" size="40" id="name" />
+                        <br/><br/>
+                        <label for="endereco">Endereço:</label>
+                        <input name="endereco" type="text" size="40" id="name" />
+                        <br/><br/>
+                        <label for="Telefone">Telefone:</label>
+                        <input name="telefone" type="text" size="40" id="name" />
+                        <br/><br/>
+                        <label for="cpf">CPF:</label>
+                        <input name="cpf" type="text" size="40" id="name" />
+                        <br/><br/>
+                        <label for="rg">RG:</label>
+                        <input name="rg" type="text" size="40" id="name" />
+                        <br/><br/>
+                        <label for="rendaMensal">Renda Mensal:</label>
+                        <input name="rendaMensal" type="text" size="40" id="name" />
+                        <br/><br/>
+                        <label for="email">Email:</label>
+                        <input name="email" type="email" size="40" id="email" />
+                    </li>
+                    <li>
+                        <label for="sexo">Sexo:</label>
+                        <label><input type="radio" name="radioSexo" value="1"/> Masculino</label>
+                        <label><input type="radio" name="radioSexo" value="2"/> Feminino</label>
+                    </li>
+                    <li>
+                        <label for="tipoPessoa">Tipo Pessoa:</label>
+                        <label><input type="radio" name="radioTipoPessoa" value="1"/> Pessoa Física</label>
+                        <label><input type="radio" name="radioTipoPessoa" value="2"/> Pessoa Jurídica</label>
+                        <br/>
+                    </li>
+                    <li>
+                        <label for="senha">Senha:</label>
+                        <input name="senha" type="password" size="40" id="senha" />
+                        <br/><br/>
+                        <label for="senha2">Repita a senha:</label>
+                        <input name="senha2" type="password" size="40" id="senha2" />
+                        
+                    </li>
+                </ul>
+                <p>
+                    <button type="submit" class="">Cadastrar</button>
+                    <button type="reset" class="">Limpar</button>
+                </p>
+            </form>
+        </article>
+        <footer>
+            <p>Todos os direitos reservados</p>
+            
+            
+        </footer>
