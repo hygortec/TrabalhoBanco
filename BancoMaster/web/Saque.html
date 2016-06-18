@@ -35,21 +35,26 @@
                 <button type="submit" class="login-button">Extrato</button>
             </form>
             <br/>
-            <form method="post" action="Emprestimo.html" class="login">
-                <button type="submit" class="login-button">Emprestimo</button>
-            </form>
-            <br/>
         </div>
         <div class="article">
-            
-            
-            
-            
-            
-            
-
-
-           
+            <article>
+                <label></label>
+                <h1>Sacar</h1>
+                <form method="POST" action="Sacar">
+                    <ul>
+                        <li>
+                            <label for="numero">Conta:</label>
+                            <input name="numero" type="text" size="40" id="numero" />
+                            <br><br>
+                            <label for="valor">Valor:</label>
+                            <input name="valor" type="text" size="40" id="valor" />                        
+                        </li>                    
+                    </ul>
+                    <p align="Right">
+                        <button type="submit" class="">Sacar</button>
+                        <button type="reset" class="">Limpar</button>
+                    </p>
+            </article>
         </div>
     </body>
 

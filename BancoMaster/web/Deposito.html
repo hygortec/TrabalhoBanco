@@ -1,35 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html> 
     <head>
+        <title>Banco Master</title>
+        <meta name="description" content="Tela principal do banco">
         <meta charset="utf-8">
-        <title>Entra</title>
-        <link rel="stylesheet" href="css/style.css" />
-        <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>  
-        <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'> 
-        <script type="text/javascript" charset="utf-8">
-            $(function () {
-                $("input:checkbox, input:radio, input:file, select").uniform();
-            });
-        </script>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
     </head>
+
     <body>
-        <article>
-            <label></label>
-            <h1>Deposito</h1>
-            <form method="POST" action="Sacar">
-                <ul>
-                    <li>
-                        <label for="numero">Conta:</label>
-                        <input name="numero" type="text" size="40" id="numero" />
-                        <br><br>
-                        <label for="valor">Valor:</label>
-                        <input name="valor" type="text" size="40" id="valor" />                        
-                    </li>                    
-                </ul>
-                <p align="Right">
-                    <button type="submit" class="">Sacar</button>
-                    <button type="reset" class="">Limpar</button>
-                </p>
-        </article>
+        <div class="header">
+            <h1>Banco Master</h1>
+            <h2></h2>
+        </div>
+
+        <div class="sidebar">
+            <form method="post" action="Principal.html" class="login">
+                <button type="submit" class="login-button">Principal</button>
+            </form>
+            <br/>
+            <form method="post" action="Cadastro.html" class="login">
+                <button type="submit" class="login-button">Cadastro</button>
+            </form>
+            <br/>
+            <form method="post" action="Deposito.html" class="deposito">
+                <button type="submit" class="login-button">Depositar</button>
+            </form>
+            <br/>
+            <form method="post" action="Saque.html" class="login">
+                <button type="submit" class="login-button">Saque</button>
+            </form>
+            <br/>
+            <form method="post" action="Extrato.html" class="login">
+                <button type="submit" class="login-button">Extrato</button>
+            </form>
+            <br/>
+        </div>
+        <div class="article">
+            <article>
+                <label></label>
+                <h1>Deposito</h1>
+                <form method="POST" action="Depositar">
+                    <ul>
+                        <li>
+                            <label for="numero">Conta:</label>
+                            <input name="numero" type="text" size="40" id="numero" />
+                            <br><br>
+                            <label for="valor">Valor:</label>
+                            <input name="valor" type="text" size="40" id="valor" />                        
+                        </li>                    
+                    </ul>
+                    <p align="Right">
+                        <button type="submit" class="">Depositar</button>
+                        <button type="reset" class="">Limpar</button>
+                    </p>
+            </article>
+        </div>
     </body>
+
 </html>
