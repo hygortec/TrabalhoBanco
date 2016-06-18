@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author higor
  */
-public class Depositar extends HttpServlet {
+public class Sacar extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -40,13 +40,13 @@ public class Depositar extends HttpServlet {
 
         if (objConta.getNumero() == numero) {
             objMovimentacao.setDataLancamento("01-01-2016");
-            objMovimentacao.setDescricao("Deposito");
+            objMovimentacao.setDescricao("Saque");
             objMovimentacao.setId_conta(objConta.getId());
-            objMovimentacao.setValor(valor);
+            objMovimentacao.setValor(valor*-1);
 
             try {
                 objControleMovimentacao.movimentar(objMovimentacao);
-                saida.println("Depositado");
+                saida.println("Sacado");
             } catch (SQLException ex) {
                 saida.println(ex);
             }

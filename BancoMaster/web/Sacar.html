@@ -15,25 +15,19 @@
     <body>
         <article>
             <label></label>
-            <h1>Banco Master</h1>
-            <form method="POST" action="LoginConta">
+            <h1>Sacar</h1>
+            <form method="POST" action="Sacar">
                 <ul>
                     <li>
-                        <label for="agencia">Agencia:</label>
-                        <input name="numeroAgencia" type="text" size="40" id="agencia" />
-                        <br/><br/>
-                        <label for="conta">Conta:</label>
-                        <input name="numeroConta" type="text" size="40" id="conta" />
-                        <br/><br/>
-                        <label for="senha">Senha:</label>
-                        <input name="senha" type="password" size="40" id="name" />
-                        <br/><br/>                       
-                        <p align="Right"><a href="Cadastro.html" align="Right">Novo Cadastro</a></p>                        
-                        
+                        <label for="numero">Conta:</label>
+                        <input name="numero" type="text" size="40" id="numero" />
+                        <br><br>
+                        <label for="valor">Valor:</label>
+                        <input name="valor" type="text" size="40" id="valor" />                        
                     </li>                    
                 </ul>
                 <p align="Right">
-                    <button type="submit" class="">Entrar</button>
+                    <button type="submit" class="">Sacar</button>
                     <button type="reset" class="">Limpar</button>
                 </p>
         </article>

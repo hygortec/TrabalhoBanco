@@ -8,6 +8,10 @@
         <servlet-name>Depositar</servlet-name>
         <servlet-class>DAO.Depositar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Sacar</servlet-name>
+        <servlet-class>DAO.Sacar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginConta</servlet-name>
         <url-pattern>/LoginConta</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Depositar</servlet-name>
         <url-pattern>/Depositar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Sacar</servlet-name>
+        <url-pattern>/Sacar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
