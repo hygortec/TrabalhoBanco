@@ -10,9 +10,18 @@ public class Conta {
     private int id_pessoa;
     private int numero;
     private int agencia;
-    private float limite;
+    private float limiteAtual;
     private float saldo;
     private String senha;
+    private float limite;
+
+    public float getLimite() {
+        return limite;
+    }
+
+    public void setLimite(float limite) {
+        this.limite = limite;
+    }   
 
     public String getSenha() {
         return senha;
@@ -54,12 +63,12 @@ public class Conta {
         this.agencia = agencia;
     }
 
-    public float getLimite() {
-        return limite;
+    public float getLimiteAtual() {
+        return limiteAtual;
     }
 
-    public void setLimite(float limite) {
-        this.limite = limite;
+    public void setLimiteAtual(float limite) {
+        this.limiteAtual = limite;
     }
 
     public float getSaldo() {

@@ -32,8 +32,7 @@ public class CadastroPessoa extends HttpServlet {
         objPessoa.setRg(req.getParameter("rg"));
         objPessoa.setTelefone(req.getParameter("telefone"));
         objPessoa.setSexo(Integer.parseInt(req.getParameter("radioSexo")));
-        objPessoa.setRendaMensal(Float.parseFloat(req.getParameter("rendaMensal")));
-        objPessoa.setRendaMensal(1500.00f);
+        objPessoa.setRendaMensal(Float.parseFloat(req.getParameter("rendaMensal")));        
         objPessoa.setTipoPessoa(Integer.parseInt(req.getParameter("radioTipoPessoa")));
         String senha = req.getParameter("senha");
         

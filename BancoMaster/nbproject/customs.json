@@ -1,8 +1,14 @@
 {
     "elements": {},
     "attributes": {
+        "name": {
+            "context": "p"
+        },
         "align": {
             "context": "a"
+        },
+        "cols": {
+            "context": "frameset"
         }
     }
 }

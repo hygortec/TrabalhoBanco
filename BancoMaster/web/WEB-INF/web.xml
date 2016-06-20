@@ -12,6 +12,22 @@
         <servlet-name>Sacar</servlet-name>
         <servlet-class>DAO.Sacar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <servlet-class>DAO.index</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Principal</servlet-name>
+        <servlet-class>DAO.Principal</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Menu</servlet-name>
+        <servlet-class>DAO.Menu</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Cabecalho</servlet-name>
+        <servlet-class>DAO.Cabecalho</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginConta</servlet-name>
         <url-pattern>/LoginConta</url-pattern>
@@ -23,6 +39,22 @@
     <servlet-mapping>
         <servlet-name>Sacar</servlet-name>
         <url-pattern>/Sacar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Principal</servlet-name>
+        <url-pattern>/Principal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Menu</servlet-name>
+        <url-pattern>/Menu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Cabecalho</servlet-name>
+        <url-pattern>/Cabecalho</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

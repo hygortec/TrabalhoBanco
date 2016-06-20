@@ -37,7 +37,10 @@ public class LoginConta extends HttpServlet {
 
             if (objConta.getAgencia() == agencia) {
                 if (objConta.getSenha().equals(senha)) {
-                    resp.sendRedirect("Principal.html");
+                    Sessao sessao = Sessao.getInstance();
+                    sessao.setNumero(numero);
+                    //resp.sendRedirect("Principal.html");
+                    resp.sendRedirect("Home.html");
                 } else {
                     saida.println("Senha errada");
                     saida.println(objConta.getSenha());

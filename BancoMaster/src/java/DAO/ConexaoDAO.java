@@ -18,16 +18,16 @@ public class ConexaoDAO {
          
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conm = DriverManager.getConnection("jdbc:mysql://db4free.net","bancomaster","shaman");
-            //Connection conm = DriverManager.getConnection("jdbc:mysql://localhost","root","cronos");
+            //Connection conm = DriverManager.getConnection("jdbc:mysql://db4free.net","bancomaster","shaman");
+            Connection conm = DriverManager.getConnection("jdbc:mysql://localhost","root","cronos");
             String sql = "use bancomaster";
 
             PreparedStatement stmt = conm.prepareStatement(sql);
             stmt.close();
             conm.close();
             
-            return DriverManager.getConnection("jdbc:mysql://db4free.net/bancomaster","bancomaster","shaman");
-            //return DriverManager.getConnection("jdbc:mysql://localhost/bancomaster","root","cronos");
+            //return DriverManager.getConnection("jdbc:mysql://db4free.net/bancomaster","bancomaster","shaman");
+            return DriverManager.getConnection("jdbc:mysql://localhost/bancomaster","root","cronos");
         }catch(ClassNotFoundException ex){
             throw new SQLDataException(ex.getMessage());
         }
