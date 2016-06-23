@@ -34,12 +34,16 @@ public class ContaDAO {
         objConta.setLimite(objConta.getLimiteAtual());
         objConta.setSaldo(0.00f);
         objConta.setSenha(senha);
+        objConta.setEmprestimos(0.00f);
+        objConta.setPrazoEmprestimos(0); 
+        objConta.setFinanciamento(0.00f);
+        objConta.setPrazoFinanciamento(0);
         return objConta;
     }
     
     public void cadastrar(Conta objConta) throws SQLException{
         Connection con = ConexaoDAO.getConexao();
-        String sql = "INSERT INTO T002_Conta(T002_Numero, T002_Agencia, T002_LimiteAtual, T002_Saldo, T001_id, T002_Senha, T002_Limite) VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO T002_Conta(T002_Numero, T002_Agencia, T002_LimiteAtual, T002_Saldo, T001_id, T002_Senha, T002_Limite, T002_Emprestimo, T002_PrazoEmprestimo, T002_Financiamento, T002_PrazoFinanciamento) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
         PreparedStatement stmt = con.prepareStatement(sql); //Prepara a string para ser execultado na conexão
 
@@ -50,16 +54,15 @@ public class ContaDAO {
         stmt.setInt(5, objConta.getId_pessoa());  
         stmt.setString(6, objConta.getSenha());
         stmt.setFloat(7, objConta.getLimite());
+        stmt.setFloat(8, objConta.getEmprestimos());
+        stmt.setInt(9, objConta.getPrazoEmprestimos());
+        stmt.setFloat(10, objConta.getFinanciamento());
+        stmt.setInt(11, objConta.getPrazoFinanciamento());
 
         stmt.execute();
         stmt.close();
     }
     
-    /** Método para alterar uma pessoa no banco
-     *   @param objPessoa Pessoa - Objeto do tipo pessoa.
-     *   @param id int - ID da tabela pessoa a qual deve ser alterado.
-     *   @return void 
-     *   @throws Retorno do banco de dados*/
     public Conta consultar(int numero) throws SQLException{ 
         Conta objConta = new Conta();
         Connection con = ConexaoDAO.getConexao();
@@ -77,6 +80,10 @@ public class ContaDAO {
         objConta.setSaldo(resultado.getFloat("T002_Saldo"));
         objConta.setSenha(resultado.getString("T002_Senha"));
         objConta.setId_pessoa(resultado.getInt("T001_id"));
+        objConta.setEmprestimos(resultado.getFloat("T002_Emprestimo"));
+        objConta.setPrazoEmprestimos(resultado.getInt("T002_PrazoEmprestimo")); 
+        objConta.setFinanciamento(resultado.getFloat("T002_Financiamento"));
+        objConta.setPrazoFinanciamento(resultado.getInt("T002_PrazoFinanciamento"));
         
         stmt.close();
         con.close();
@@ -84,14 +91,10 @@ public class ContaDAO {
         return objConta;
     }
     
-    /** Método para alterar uma pessoa no banco
-     *   @param objPessoa Pessoa - Objeto do tipo pessoa.
-     *   @param id int - ID da tabela pessoa a qual deve ser alterado.
-     *   @return void 
-     *   @throws Retorno do banco de dados*/
+   
     public void alterar(Conta objConta) throws SQLException{        
         Connection con = ConexaoDAO.getConexao();
-        String sql = "UPDATE t002_conta  SET  T002_Numero =?,  T002_Agencia =?,  T002_LimiteAtual =?,  T002_Saldo =?,  T002_Senha =?, T002_Limite=? WHERE  T002_id =?  and T001_id =?";
+        String sql = "UPDATE t002_conta  SET  T002_Numero =?,  T002_Agencia =?,  T002_LimiteAtual =?,  T002_Saldo =?,  T002_Senha =?, T002_Limite=?, T002_Emprestimo=?, T002_PrazoEmprestimo=?, T002_Financiamento=?, T002_PrazoFinanciamento=? WHERE  T002_id =?  and T001_id =?";
         //UPDATE t002_conta  SET  T002_Numero =?,  T002_Agencia =?,  T002_Limite =?,  T002_Saldo =?,  T002_Senha =?  WHERE  T002_id =?  and T001_id =? ;
 
         
@@ -103,18 +106,18 @@ public class ContaDAO {
         stmt.setFloat(4, objConta.getSaldo());
         stmt.setString(5, objConta.getSenha());
         stmt.setFloat(6, objConta.getLimite());
-        stmt.setInt(7, objConta.getId_pessoa());  
-        stmt.setInt(8, objConta.getId());
+        stmt.setFloat(7, objConta.getEmprestimos());
+        stmt.setInt(8, objConta.getPrazoEmprestimos());
+        stmt.setFloat(9, objConta.getFinanciamento());
+        stmt.setInt(10, objConta.getPrazoFinanciamento());
+        stmt.setInt(11, objConta.getId_pessoa());  
+        stmt.setInt(12, objConta.getId());
 
         stmt.execute();
         stmt.close();      
         
     }
     
-    /** Método para excluir uma pessoa no banco
-     *   @param id int - ID da tabela pessoa a qual deve ser excluido.
-     *   @return void 
-     *   @throws Retorno do banco de dados*/
     public void remover(int id) throws SQLException{
         Connection con = ConexaoDAO.getConexao();
         String sql = "DELETE FROM T001_Pessoa WHERE T001_id = ?";

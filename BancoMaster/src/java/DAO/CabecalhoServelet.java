@@ -11,30 +11,26 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author higor
  */
-public class Cabecalho extends HttpServlet {
+public class CabecalhoServelet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter saida = resp.getWriter();
-        Sessao sessao = Sessao.getInstance();
+        HttpSession session = req.getSession();        
+        int numeroConta = (int) session.getAttribute("numero");
+        
         String pagina = "";
         pagina += "<!DOCTYPE html>"
                 + "<html> "
                 + "    <head>"
-                + "        <title>Banco Master</title>"
-                + "        <meta name='description' content='Tela principal do banco'>"
-                + "        <meta charset='utf-8'>"
                 + "        <link rel='stylesheet' type='text/css' href='css/style.css'/>"
-                + "    </head>"
-                + "    <body>"
-                + "        <h1>Banco Master</h1>"
-                + "        <h2><p align='Left'>" + "Conta: " + sessao.getNumero() + "</p></h2>"
-                + "    </body>"
+                + "        <img src='images\\teste2.png' height='150' width='400' border='0' alt='Descrição do logotipo do site'>"
                 + "</html>";
         saida.print(pagina);
     }

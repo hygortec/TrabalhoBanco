@@ -12,44 +12,48 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author higor
  */
-public class Sacar extends HttpServlet {
+public class SacarServelet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         PrintWriter saida = resp.getWriter();
+        HttpSession session = req.getSession();        
+        int numeroConta = (int) session.getAttribute("numero");
+        int idPessoa = (int) session.getAttribute("idPessoa");
 
         Movimentacao objMovimentacao = new Movimentacao();
         MovimentacaoDAO objControleMovimentacao = new MovimentacaoDAO();
         Conta objConta = null;
         ContaDAO objControleConta = new ContaDAO();
 
-        Sessao sessao = Sessao.getInstance();
-        int numero = sessao.getNumero();
+        
+        
         float valor = Float.parseFloat(req.getParameter("valor"));
 
         try {
-            objConta = objControleConta.consultar(numero);
+            objConta = objControleConta.consultar(numeroConta);
         } catch (SQLException ex) {
             saida.println(ex);
         }
 
-        if (objConta.getNumero() == numero) {
+        if (objConta.getNumero() == numeroConta) {
             if (valor > (objConta.getSaldo() + objConta.getLimiteAtual())) {
-                saida.println("Sem saldo e sem limite");
+                saida.println(new MenssagenRetorno("Sem saldo e sem limite", 2).getPagina());
             } else if (valor <= objConta.getSaldo()) {
                 objConta.setSaldo(objConta.getSaldo() - valor);
 
-                objMovimentacao.setDataLancamento("01-01-2016");
+                objMovimentacao.setDataLancamento(new DataHora().getDateTime());
                 objMovimentacao.setDescricao("Saque conta");
                 objMovimentacao.setId_conta(objConta.getId());
                 objMovimentacao.setValor(valor * -1);
-                saida.println("Saque efetuado");
+                saida.println(new MenssagenRetorno("Saque efetuado", 3).getPagina());
 
                 try {
                     objControleMovimentacao.movimentar(objMovimentacao);
@@ -60,11 +64,11 @@ public class Sacar extends HttpServlet {
             } else if (valor <= objConta.getLimiteAtual() && objConta.getSaldo() == 0) {
                 objConta.setLimiteAtual(objConta.getLimiteAtual() - valor);
 
-                objMovimentacao.setDataLancamento("01-01-2016");
+                objMovimentacao.setDataLancamento(new DataHora().getDateTime());
                 objMovimentacao.setDescricao("Saque limite");
                 objMovimentacao.setId_conta(objConta.getId());
                 objMovimentacao.setValor(valor * -1);
-                saida.println("Saque efetuado com o limite");
+                saida.println(new MenssagenRetorno("Saque efetuado", 3).getPagina());
                 try {
                     objControleMovimentacao.movimentar(objMovimentacao);
                 } catch (SQLException ex) {
@@ -73,7 +77,7 @@ public class Sacar extends HttpServlet {
             } else {
                 float aux = valor;
                 valor -= objConta.getSaldo();
-                objMovimentacao.setDataLancamento("01-01-2016");
+                objMovimentacao.setDataLancamento(new DataHora().getDateTime());
                 objMovimentacao.setDescricao("Saque conta");
                 objMovimentacao.setId_conta(objConta.getId());
                 objMovimentacao.setValor(objConta.getSaldo() * -1);
@@ -86,11 +90,11 @@ public class Sacar extends HttpServlet {
                 }
 
                 objConta.setLimiteAtual(objConta.getLimiteAtual() - valor);
-                objMovimentacao.setDataLancamento("01-01-2016");
+                objMovimentacao.setDataLancamento(new DataHora().getDateTime());
                 objMovimentacao.setDescricao("Saque limite");
                 objMovimentacao.setId_conta(objConta.getId());
                 objMovimentacao.setValor(valor * -1);
-                saida.println("Saque efetuado com saldo e limite");
+                saida.println(new MenssagenRetorno("Saque efetuado", 3).getPagina());
                 try {
                     objControleMovimentacao.movimentar(objMovimentacao);                    
                 } catch (SQLException ex) {

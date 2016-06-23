@@ -2,15 +2,15 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>LoginConta</servlet-name>
-        <servlet-class>DAO.LoginConta</servlet-class>
+        <servlet-class>DAO.LoginContaServelet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Depositar</servlet-name>
-        <servlet-class>DAO.Depositar</servlet-class>
+        <servlet-class>DAO.DepositarServelet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Sacar</servlet-name>
-        <servlet-class>DAO.Sacar</servlet-class>
+        <servlet-class>DAO.SacarServelet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>index</servlet-name>
@@ -18,7 +18,7 @@
     </servlet>
     <servlet>
         <servlet-name>Principal</servlet-name>
-        <servlet-class>DAO.Principal</servlet-class>
+        <servlet-class>DAO.PrincipalServelet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Menu</servlet-name>
@@ -26,7 +26,23 @@
     </servlet>
     <servlet>
         <servlet-name>Cabecalho</servlet-name>
-        <servlet-class>DAO.Cabecalho</servlet-class>
+        <servlet-class>DAO.CabecalhoServelet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExtratoServelet</servlet-name>
+        <servlet-class>DAO.ExtratoServelet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutConta</servlet-name>
+        <servlet-class>DAO.LogoutContaServelet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EmprestimoServelet</servlet-name>
+        <servlet-class>DAO.EmprestimoServelet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FinanciamentoServelet</servlet-name>
+        <servlet-class>DAO.FinanciamentoServelet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginConta</servlet-name>
@@ -55,6 +71,22 @@
     <servlet-mapping>
         <servlet-name>Cabecalho</servlet-name>
         <url-pattern>/Cabecalho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExtratoServelet</servlet-name>
+        <url-pattern>/ExtratoServelet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutConta</servlet-name>
+        <url-pattern>/LogoutConta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmprestimoServelet</servlet-name>
+        <url-pattern>/EmprestimoServelet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FinanciamentoServelet</servlet-name>
+        <url-pattern>/FinanciamentoServelet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

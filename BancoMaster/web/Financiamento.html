@@ -11,19 +11,22 @@
     <body>        
         <article>
             <br><br>
-            <h2>Emprestimo</h2>           
-            <form method="POST" action="EmprestimoServelet">
+            <h2>Financiamento</h2>           
+            <form method="POST" action="FinanciamentoServelet">
                 <ul>
                     <li>
-                        <label for="valor">Valor:</label>
-                        <input name="valor" type="text" size="40" id="valor" /> 
+                        <label for="valor">Valor total:</label>
+                        <input name="valorTotal" type="text" size="40" id="valor" /> 
+                        <br><br>
+                        <label for="valor">Valor entrada:</label>
+                        <input name="valorEntrada" type="text" size="40" id="valor" /> 
                         <br><br>
                         <label for="valor">Prazo:</label>
                         <input name="prazo" type="text" size="10" id="valor" />
                     </li>                    
                 </ul>
                 <p align="Right">
-                    <button type="submit" class="">Solicitar Emprestimo</button>
+                    <button type="submit" class="">Solicitar Financiamento</button>
                     <button type="reset" class="">Limpar</button>
                 </p>
         </article>

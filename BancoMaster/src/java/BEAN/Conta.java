@@ -14,6 +14,11 @@ public class Conta {
     private float saldo;
     private String senha;
     private float limite;
+    private float emprestimos;
+    private int prazoEmprestimos;
+    private float financiamento;
+    private int prazoFinanciamento;
+   
 
     public float getLimite() {
         return limite;
@@ -78,4 +83,38 @@ public class Conta {
     public void setSaldo(float saldo) {
         this.saldo = saldo;
     }    
+
+    public float getEmprestimos() {
+        return emprestimos;
+    }
+
+    public void setEmprestimos(float emprestimos) {
+        this.emprestimos = emprestimos;
+    }
+
+    public int getPrazoEmprestimos() {
+        return prazoEmprestimos;
+    }
+
+    public void setPrazoEmprestimos(int prazoEmprestimos) {
+        this.prazoEmprestimos = prazoEmprestimos;
+    }
+
+    public float getFinanciamento() {
+        return financiamento;
+    }
+
+    public void setFinanciamento(float financiamento) {
+        this.financiamento = financiamento;
+    }
+
+    public int getPrazoFinanciamento() {
+        return prazoFinanciamento;
+    }
+
+    public void setPrazoFinanciamento(int prazoFinanciamento) {
+        this.prazoFinanciamento = prazoFinanciamento;
+    }
+    
+    
 }
