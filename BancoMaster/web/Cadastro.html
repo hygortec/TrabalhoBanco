@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<!DOCTYPE htm/* global telefone */
+
+l>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -8,14 +10,14 @@
         <script type="text/javascript" charset="utf-8">
             $(function () {
                 $("input:checkbox, input:radio, input:file, select").uniform();
-            });
+            });  
         </script>
     </head>
     <body> 
         <article>            
             <label></label>
             <h1>Cadastro de Correntista</h1>
-            <form method="POST" action="CadastroPessoa">
+            <form method="POST" action="CadastroPessoa" onsubmit="validar(nome, endereco, telefone, cpf, rg, rendaMensal, email, senha, senha2)">
                 <ul>
                     <li>
                         <label for="name">Nome:</label>
