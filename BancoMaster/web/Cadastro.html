@@ -7,17 +7,13 @@ l>
         <title>Cadastro Correntista</title>
         <link rel="stylesheet" href="css/style.css" />
         <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>  
-        <script type="text/javascript" charset="utf-8">
-            $(function () {
-                $("input:checkbox, input:radio, input:file, select").uniform();
-            });  
-        </script>
+        <script language="javascript" type="text/javascript" src="js/javascriptbm.js"></script>
     </head>
     <body> 
         <article>            
             <label></label>
             <h1>Cadastro de Correntista</h1>
-            <form method="POST" action="CadastroPessoa" onsubmit="validar(nome, endereco, telefone, cpf, rg, rendaMensal, email, senha, senha2)">
+            <form method="POST" action="CadastroPessoa" onsubmit="validar(nome, endereco, telefone, cpf, rg, rendaMensal, email, senha, senha2, sexo, tipoPessoa)">
                 <ul>
                     <li>
                         <label for="name">Nome:</label>
