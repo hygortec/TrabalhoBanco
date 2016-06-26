@@ -6,26 +6,30 @@
         <meta name="description" content="Tela principal do banco">
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <script  language="javascript"  type="text/javascript" src="js/bancojavascript.js">
+     
+        </script>
     </head>
 
     <body>        
         <article>
             <br><br>
             <h2>Emprestimo</h2>           
-            <form method="POST" action="EmprestimoServelet">
+            <form name="emp" method="POST" onsubmit="return Emprestimo()" action="EmprestimoServelet">
                 <ul>
                     <li>
                         <label for="valor">Valor:</label>
-                        <input name="valor" type="text" size="40" id="valor" /> 
+                        <input type="text" size="40" id="valor" onkeypress="return MascaraMoeda(this,'.',',',event);">
                         <br><br>
                         <label for="valor">Prazo:</label>
-                        <input name="prazo" type="text" size="10" id="valor" />
+                        <input name="prazo" type="text" size="10" id="prazo" onkeypress="return SomenteNumero(event);"/>
                     </li>                    
                 </ul>
                 <p align="Right">
                     <button type="submit" class="">Solicitar Emprestimo</button>
                     <button type="reset" class="">Limpar</button>
                 </p>
+            </form>
         </article>
     </body>
 </html>

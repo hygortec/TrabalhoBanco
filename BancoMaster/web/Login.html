@@ -6,10 +6,8 @@
         <link rel="stylesheet" href="css/style.css" />
         <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>  
         <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'> 
-        <script type="text/javascript" charset="utf-8">
-            $(function () {
-                $("input:checkbox, input:radio, input:file, select").uniform();
-            });
+         <script  language="javascript"  type="text/javascript" src="js/bancojavascript.js">
+
         </script>
     </head>
     <body>        
@@ -18,17 +16,17 @@
             <label></label>
             <p></p>
             <img src="images\teste2.png" height="150" width="400" border="0" alt="Descrição do logotipo do site">
-            <form method="POST" action="LoginConta">
+            <form name="log" method="POST" onsubmit="return Login()" action="LoginConta">
                 <ul>
                     <li>
-                        <label for="agencia">Agencia:</label>
-                        <input name="numeroAgencia" type="text" size="40" id="agencia" />
+                        <label for="numeroagencia">Agencia:</label>
+                        <input name="numeroAgencia" type="text" size="40" id="numeroAgencia" />
                         <br/><br/>
-                        <label for="conta">Conta:</label>
-                        <input name="numeroConta" type="text" size="40" id="conta" />
+                        <label for="numeroconta">Conta:</label>
+                        <input name="numeroConta" type="text" size="40" id="numeroConta" />
                         <br/><br/>
                         <label for="senha">Senha:</label>
-                        <input name="senha" type="password" size="40" id="name" />
+                        <input name="senha" type="password" size="40" id="senha" />
                         <br/><br/>                       
                         <p align="Right"><a href="Cadastro.html" align="Right">Novo Cadastro</a></p>                        
                         
@@ -38,6 +36,7 @@
                     <button type="submit" class="">Entrar</button>
                     <button type="reset" class="">Limpar</button>
                 </p>
+            </form>
         </article>
     </body>
 </html>

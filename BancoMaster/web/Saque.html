@@ -6,23 +6,27 @@
         <meta name="description" content="Tela principal do banco">
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <script  language="javascript"  type="text/javascript" src="js/bancojavascript.js">
+     
+        </script>
     </head>
 
     <body>        
         <article>
             <br><br>
             <h2>Sacar</h2>
-            <form method="POST" action="Sacar">
+            <form name="saq" method="POST" onsubmit="return Saque()" action="Sacar">
                 <ul>
                     <li>
                         <label for="valor">Valor:</label>
-                        <input name="valor" type="text" size="40" id="valor" />                        
+                        <input name="valor" type="text" size="40" id="valor" onkeypress="return MascaraMoeda(this,'.',',',event);" />                        
                     </li>                    
                 </ul>
                 <p align="Right">
                     <button type="submit" class="">Sacar</button>
                     <button type="reset" class="">Limpar</button>
                 </p>
+            </form>
         </article>
     </body>
 </html>

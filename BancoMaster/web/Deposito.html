@@ -5,24 +5,30 @@
         <title>Banco Master</title>
         <meta name="description" content="Tela principal do banco">
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+       <link rel="stylesheet" href="css/style.css" />
+        <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>  
+        <link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'> 
+        <script  language="javascript"  type="text/javascript" src="js/bancojavascript.js">
+     
+        </script>
     </head>
 
     <body>        
         <article>
             <br><br>
             <h2>Deposito</h2>           
-            <form method="POST" action="Depositar">
+            <form name="dep" method="POST" onsubmit="return Deposito()" action="Depositar">
                 <ul>
                     <li>
                         <label for="valor">Valor:</label>
-                        <input name="valor" type="text" size="40" id="valor" /> 
+                        <input type="text" size="40" id="valor" onkeypress="return MascaraMoeda(this,'.',',',event);">
                     </li>                    
                 </ul>
                 <p align="Right">
                     <button type="submit" class="">Depositar</button>
                     <button type="reset" class="">Limpar</button>
                 </p>
+            </form>   
         </article>
     </body>
 </html>

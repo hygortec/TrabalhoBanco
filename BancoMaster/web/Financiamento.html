@@ -6,29 +6,33 @@
         <meta name="description" content="Tela principal do banco">
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <script  language="javascript"  type="text/javascript" src="js/bancojavascript.js">
+     
+        </script>
     </head>
 
     <body>        
         <article>
             <br><br>
             <h2>Financiamento</h2>           
-            <form method="POST" action="FinanciamentoServelet">
+            <form name="fin" method="POST" onsubmit="return Financiamento()" action="FinanciamentoServelet">
                 <ul>
                     <li>
                         <label for="valor">Valor total:</label>
-                        <input name="valorTotal" type="text" size="40" id="valor" /> 
+                        <input name="valorTotal" type="text" size="40" id="valor" onkeypress="return MascaraMoeda(this,'.',',',event);" /> 
                         <br><br>
                         <label for="valor">Valor entrada:</label>
-                        <input name="valorEntrada" type="text" size="40" id="valor" /> 
+                        <input name="valorEntrada" type="text" size="40" id="valorEntrada" onkeypress="return MascaraMoeda(this,'.',',',event);"/> 
                         <br><br>
                         <label for="valor">Prazo:</label>
-                        <input name="prazo" type="text" size="10" id="valor" />
+                        <input name="prazo" type="text" size="10" id="prazo" onkeypress="return SomenteNumero(event);" />
                     </li>                    
                 </ul>
                 <p align="Right">
                     <button type="submit" class="">Solicitar Financiamento</button>
                     <button type="reset" class="">Limpar</button>
                 </p>
+            </form>
         </article>
     </body>
 </html>
